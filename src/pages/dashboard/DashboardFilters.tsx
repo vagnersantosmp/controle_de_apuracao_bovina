@@ -15,7 +15,7 @@ interface Props {
   filters: FiltersType;
   setFilters: (v: FiltersType) => void;
   lojasOptions: { id: string; nome: string; codigo: string }[];
-  cortesOptions: { id: string; descricao: string }[];
+  cortesOptions: { id: string; descricao: string; codigo?: string }[];
   isGlobalAdmin: boolean;
 }
 
@@ -140,9 +140,16 @@ export function DashboardFilters({ filters, setFilters, lojasOptions, cortesOpti
                       Todos os Cortes
                     </CommandItem>
                     {cortesOptions.map((c) => (
-                      <CommandItem key={c.id} onSelect={() => toggleCorte(c.id)}>
+                      <CommandItem key={c.id} value={`${c.codigo ?? ''} ${c.descricao}`} onSelect={() => toggleCorte(c.id)}>
                         <Checkbox checked={localFilters.cortes.includes(c.id)} className="mr-2" />
-                        {c.descricao}
+                        <span className="flex items-center gap-2">
+                          {c.codigo && (
+                            <span className="font-mono text-xs bg-muted text-muted-foreground px-1.5 py-0.5 rounded shrink-0">
+                              {c.codigo}
+                            </span>
+                          )}
+                          <span className="truncate">{c.descricao}</span>
+                        </span>
                       </CommandItem>
                     ))}
                   </CommandGroup>

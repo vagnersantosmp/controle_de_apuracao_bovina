@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { addDays } from 'date-fns';
+import { addDays, subMonths, startOfDay } from 'date-fns';
 import type { AppUser } from '@/contexts/AuthContext';
 
 export function useSeedData(
@@ -21,8 +21,9 @@ export function useSeedData(
 
     try {
       const metodologias = ['boi_no_osso', 'nota_10', 'embalada'];
-      let currentDate = new Date('2026-01-02T12:00:00Z');
-      const endDate = new Date('2026-03-02T12:00:00Z');
+      const now = new Date();
+      let currentDate = startOfDay(subMonths(now, 2)); // 2 meses atrás
+      const endDate = startOfDay(now); // hoje
       let apuracoesCriadas = 0;
 
       while (currentDate <= endDate) {

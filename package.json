@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:manual": "npx -y md-to-pdf docs/MANUAL_DE_USO.md"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

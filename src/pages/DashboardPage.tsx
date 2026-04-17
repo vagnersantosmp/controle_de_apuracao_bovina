@@ -71,7 +71,7 @@ export default function DashboardPage() {
                 </Button>
                 <Button onClick={handleSeedData} disabled={seeding || cleaning} variant="secondary" className="shadow-sm">
                   {seeding ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Database className="w-4 h-4 mr-2" />}
-                  Gerar Dados Fake (2 Meses)
+                  Gerar Dados Fake (Últimos 2 Meses)
                 </Button>
               </>
             )}
