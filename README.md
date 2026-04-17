@@ -1,5 +1,5 @@
 # 🥩 Açougue Control - Sistema de Apuração e Gestão de Perdas
-
+link do sistema no ar: www.apuracao.vagnersantosmp.com.br
 Um sistema web completo, responsivo e seguro focado no **gerenciamento de quebras, controle de perdas e visibilidade analítica** para grandes redes de açougues e supermercados.
 
 Desenvolvido para transformar dados soltos em **inteligência de negócios (Business Intelligence)**, o sistema permite que a diretoria e os gerentes de prevenção compreendam exatamente onde, como e por que o desperdício de matéria-prima está ocorrendo, loja a loja e corte a corte.
